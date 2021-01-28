@@ -138,6 +138,10 @@ Stellt ein, dass ein automatischer Login in die CLI nach dem Boot ausgeführt wi
 
 ## Funktion des Skriptes:
 
+**ACHTUNG**
+Durch die letzte Anpassung am Skript, stimmt die Dokumentation nicht im ganzen
+**/ACHTUNG**
+
 In der Funktion **dialnumber** wird die Rufnummer der Wählscheibe gelesen, in dem beim Zurück rotieren der Wählscheibe, die Kontaktabbrüche von GPIO 21 und GPIO 26 gezählt werden. In Zeile 56 steht **time.sleep(0.109)**, dieser Wert wird als Pause zwischen den Impulsen benötigt und kann gegebenenfalls feiner eingestellt werden, sollte die Wählscheibe schneller oder langsamer rotiert, als die in meinem Telefon. 
 
 Solange GPIO 6 und GPIO 20 einen geschlossenen Kreis bilden, läuft eine Schleife in dem der Status von linphone nach eingehenden Anrufen geprüft wird. In der Funktion **CALL** wird dies mit **if RINGVALUE == 'IncomingReceived':** getätigt. Bei einem eingehenden Anruf wird dann die Funktion **wecker** geschaltet. Diese Funktion gibt nur an das Relais Modul ein Up und Down weiter, welcher den Kreislauf der 9V Batterie mit dem Wecker schließt und damit den Wecker klingeln lässt. 
