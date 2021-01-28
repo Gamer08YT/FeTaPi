@@ -88,7 +88,7 @@ def CALL():
   if FORK == 1:
     FORK = GPIO.input(PinForkIn)
     time.sleep(0.0001)
-    RINGCHECK = 'linphonecsh generic \'calls\' | sed -n 4p | awk \'{print $6}\''
+    RINGCHECK = 'linphonecsh generic \'calls\' | sed -n 4p | awk \'{print $5}\''
     RINGVALUE = subprocess.check_output(['bash', '-c', RINGCHECK ]).decode().strip()
     if RINGVALUE == 'IncomingReceived':
       wecker()
