@@ -20,9 +20,11 @@ Es werden nur minimale Lötarbeiten benötigt, welche man aus der folgenden Graf
 1. Raspberry Pi Zero
 2. Lötwerkzeug
 3. 1 Kanal Relais 5V/230V
+    4. Alternativ ein Boost-Buck Converter von 5V auf 9V
 4. USB Soundkarte
 5. USB auf MicorUSB Adapater
 6. 9V Batterie + Betterieclip
+    7. Entfällt bei der Nutzung des Boost-Buck Converter
 7. Fetap 791-1
 8. Jumper Kabel 
 
@@ -50,6 +52,19 @@ Auf der Platine des FeTAp befindet sich oben Rechts die Telefongabel (GU), welch
 *Fotografie der Gabel von Unten*
 
 Um den Wecker zu betreiben, habe ich eine 9V Batterie und ein Relais Modul genommen. Das Relais wird an den GPIO 3.3 Volt (Grau), GND (Grün) und GPIO 17 (Magenta) Pin verbunden. Vom Relais geht ein Kabel von NO (Blau) an den Minus Pol des Weckers. Von COM (Schwarz) geht ein Kabel an den Minus Pol der Batterie. Der Plus Pol der Batterie ist mit dem Plus Pol des Weckers verbunden.
+
+In der Zweiten Version wurde anstelle des 9V Blocks, ein Boost-Buck Converter genutzt. ([Zumbeispiel](https://de.aliexpress.com/item/32963598972.html?spm=a2g0o.productlist.0.0.628b2f84lovNSv&algo_pvid=62e085f4-57f2-4a6b-98f8-d2d6d9196dae&algo_expid=62e085f4-57f2-4a6b-98f8-d2d6d9196dae-14&btsid=0b01114516123906300575912e3cc2&ws_ab_test=searchweb0_0,searchweb201602_,searchweb201603_)) 
+
+Hierzu wurde die Verkabelung wie Folgt durchgeführt:
+
+**Raspberry Pi an Converter**
+GND -> VIN-
+GPIO 17 -> VIN+
+5V -> EN
+
+**Converter an Wecker**
+Volt + -> Schwarze Ader in der Grafik
+Volt - -> Blaue Ader in der Grafik
 
 ## Software 
 
