@@ -55,16 +55,18 @@ Um den Wecker zu betreiben, habe ich eine 9V Batterie und ein Relais Modul genom
 
 In der Zweiten Version wurde anstelle des 9V Blocks, ein Boost-Buck Converter genutzt. ([Zumbeispiel](https://de.aliexpress.com/item/32963598972.html?spm=a2g0o.productlist.0.0.628b2f84lovNSv&algo_pvid=62e085f4-57f2-4a6b-98f8-d2d6d9196dae&algo_expid=62e085f4-57f2-4a6b-98f8-d2d6d9196dae-14&btsid=0b01114516123906300575912e3cc2&ws_ab_test=searchweb0_0,searchweb201602_,searchweb201603_)) 
 
+Dieser Übernimmt die selbe Aufgabe wie das Relai und der 9V Block. Dadurch kann zusätzlicher Platz gespart werden 
+
 Hierzu wurde die Verkabelung wie Folgt durchgeführt:
 
-**Raspberry Pi an Converter**
-GND -> VIN-
-GPIO 17 -> VIN+
-5V -> EN
+**Raspberry Pi an Converter**  
+GND -> VIN-  
+GPIO 17 -> VIN+  
+5V -> EN  
 
-**Converter an Wecker**
-Volt + -> Schwarze Ader in der Grafik
-Volt - -> Blaue Ader in der Grafik
+**Converter an Wecker**  
+Volt + -> Schwarze Ader in der Grafik  
+Volt - -> Blaue Ader in der Grafik  
 
 ## Software 
 
