@@ -6,6 +6,7 @@
 4. Software
 5. Kurzfassung (tl;dr)
 6. Funktion des Skriptes
+7. Debug
 
 ## Beweggründe
 FeTaPi ist ein in Python 3 geschriebener Skript, welcher es ermöglicht ein Fernsprechtischapparat (FeTap) mit SIP zu betreiben. Dabei wird die Wählscheibe als direkte Eingabe genutzt und ein SIP Client (linphone), welcher auf dem Raspberry Pi betrieben wird, sorgt für die Telefonie. Der Wecker des FeTaps wird hierbei als Klingel für eingehende Anrufe benutzt und der Hörer über eine USB Soundkarte betrieben.
@@ -155,3 +156,11 @@ Die **dialnumber** Funktion macht solange nichts, bis eine Nummer gewählt wurde
 In allen Situationen wird beim Schließen des Kreislaufes von GPIO 6 und GPIO 20 das Telefonat oder die Rufnummernwahl beendet. Das wird in der Funktion hangup definiert. 
 
 ![](https://www.elektrollart.org/wp-content/uploads/IMG_7407-1024x633.jpg)
+
+## Debug 
+Im Debug Verzeichnis befinden sich zwei Python Skripte.
+
+Die dial.py kann genutzt werden um die Funktionalität der Wählscheibe zu überprüfen und gegebenfalls einzustellen.
+Nachdem Ausführen kann direkt getestet werden, ob beim rotieren der Wählscheibe, die korrekte Nummer angezeigt wird. Sollte es dazu kommen, dass die gewählte Nummer abweicht, kann dies im Sleep der 37 angepasst werden. Dieser Sleep steht im Default auf 0.109. In Zeile 39 kann der Countdown vom Zietpunkt der Wahl und Anzeige konfiguriert werden.
+
+Die ring.py lässt sofort den Hammer des Weckers in einer Schleife schlagen. Dies kann benutzt werden um die Verklabung zu überprüfen.
